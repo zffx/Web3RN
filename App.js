@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 const Web3 = require('web3');
 const web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('https://ropsten.infura.io/rqmgop6P5BDFqz6yfGla'));
+web3.setProvider(new web3.providers.HttpProvider('http://ethdev:YrmpVP6d7uj16fUvZA1d@47.75.221.64/eth'));
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -32,7 +32,7 @@ export default class App extends Component<Props> {
   }
 
   componentDidMount(){
-    web3.eth.getBalance('0x0000000000000000000000000000000000000000', (err, balance) => {
+    web3.eth.getBalance('0x083c5c0d175db4b6329d90864025c9670204a810', (err, balance) => {
       console.log('balance ' + balance);
       this.setState({balance});
     });
@@ -45,7 +45,7 @@ export default class App extends Component<Props> {
           Welcome to React Native Web3 Boiler Plate!
         </Text>
         <Text style={styles.welcome}>
-          This -> ({this.state.balance/10e17} rETH) is a result of web3.eth.getBalance('0x0000000000000000000000000000000000000000')
+          This -> ({this.state.balance/10e17} rETH) is a result of web3.eth.getBalance('0x083c5c0d175db4b6329d90864025c9670204a810')
         </Text>
         <Text style={styles.instructions}>
           I hope for this to be the start of a painless journey into cross platform Ethereum mobile development
